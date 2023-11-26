@@ -60,16 +60,3 @@ gen_temp = 160.0 	; Temp to generate initial velocities. Equals ref_t
 gen_seed = -1 		; Random seed for generation of initial velocities
 ld_seed = -1		; Random seed for langevin dynamics
 comm_mode = angular 	; Center of Mass velocity removal. Check if it is appropriate
-; Pull code
-pull                    = yes
-pull_ncoords            = 1         ; only one reaction coordinate 
-pull_ngroups            = 2         ; two groups defining one reaction coordinate 
-pull_group1_name        = Chain_A 
-pull_group2_name        = Chain_B 
-pull_coord1_type        = umbrella  ; harmonic potential
-pull_coord1_geometry    = distance  ; simple distance increase 
-pull_coord1_dim         = Y Y Y
-pull_coord1_groups      = 1 2
-pull_coord1_start       = yes       ; define initial COM distance > 0
-pull_coord1_rate        = 0      ; 0.01 nm per ps = 10 nm per ns
-pull_coord1_k           = 1000      ; kJ mol^-1 nm^-2
